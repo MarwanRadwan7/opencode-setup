@@ -1,12 +1,29 @@
 # opencode-setup
 
-### Installing Necessary Skills for Opencode Agent
+## LSP Setup: Install All Language Servers at Once
+```bash
+chmod +x setup-lsps.sh && ./setup-lsps.sh
+```
+### What's covered vs. what opencode auto-installs
+ 
+| Installed by script | Auto-installed by opencode |
+|---|---|
+| gopls, rust-analyzer, pyright | astro, bash-language-server |
+| typescript-language-server | clangd, kotlin-ls, lua-ls |
+| ruby-lsp, csharp-ls | php-intelephense, svelte |
+| elixir-ls, hls, ocamllsp | terraform, tinymist |
+| clojure-lsp, zls, nixd | vue, yaml-language-server |
+| jdtls (Java, Linux only) | eslint (requires project dep) |
+ 
+> **Note:** Language runtimes themselves (Go, Rust, Node, Java, .NET, Ruby, etc.) must be installed before running this script. The script only installs the LSP servers on top of whatever runtimes you already have.
+
+## Installing Necessary Skills for Opencode Agent
 
 ```bash
 npx skills add jeffallan/claude-skills
 ```
 
-### Cool Plugins
+## Cool Plugins
 
 - [OpenCode Open Agent Control](https://github.com/darrenhinde/OpenAgentsControl)
 - [OpenCode-Notify](https://github.com/kdcokenny/opencode-notify)
